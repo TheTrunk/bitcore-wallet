@@ -1,24 +1,26 @@
 {
-  "name": "bitcore-wallet",
-  "description": "A CLI Mutisig HD Bitcoin Wallet, demo for Bitcore Wallet Service",
-  "author": "BitPay Inc",
-  "version": "1.1.0",
+  "name": "bitcore-wallet-hush",
+  "description": "A CLI Mutisig HD Hush Wallet, demo for Bitcore Wallet Service Hush",
+  "author": "BitPay Inc, TheTrunk",
+  "version": "1.0.0",
   "keywords": [
     "bitcoin",
+    "hush",
     "copay",
+    "hushpay",
     "multisig",
     "wallet"
   ],
   "repository": {
-    "url": "git@github.com:bitpay/bitcore-wallet.git",
+    "url": "git@github.com:TheTrunk/bitcore-wallet-hush.git",
     "type": "git"
   },
   "bugs": {
-    "url": "https://github.com/bitpay/bitcore-wallet/issues"
+    "url": "https://github.com/TheTrunk/bitcore-wallet-hush/issues"
   },
   "dependencies": {
     "async": "^2.5.0",
-    "bitcore-wallet-client": "6.4.0",
+    "bitcore-wallet-client-hush": "git://github.com/TheTrunk/bitcore-wallet-hush#master",
     "commander": "^2.6.0",
     "lodash": "^3.3.1",
     "moment": "^2.9.0",

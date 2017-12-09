@@ -2,7 +2,7 @@ var _ = require('lodash');
 var url = require('url');
 var read = require('read')
 var log = require('npmlog');
-var Client = require('bitcore-wallet-client');
+var Client = require('bitcore-wallet-client-hush');
 var FileStorage = require('./filestorage');
 var sjcl = require('sjcl');
 
@@ -93,7 +93,7 @@ Utils.getClient = function(args, opts, cb) {
   opts = opts || {};
 
   var filename = args.file || process.env['WALLET_FILE'] || process.env['HOME'] + '/.wallet.dat';
-  var host = args.host || process.env['BWS_HOST'] || 'https://bws.bitpay.com/';
+  var host = args.host || process.env['BWS_HOST'] || 'http://localhost:3232/';
 
   var storage = new FileStorage({
     filename: filename,
@@ -220,7 +220,7 @@ Utils.findOneTxProposal = function(txps, id) {
 };
 
 Utils.UNITS2 = {
-  'btc': 100000000,
+  'HUSH': 100000000,
   'bit': 100,
   'sat': 1,
 };
@@ -251,21 +251,15 @@ Utils.configureCommander = function(program) {
   program
     .version('0.0.1')
     .option('-f, --file <filename>', 'Wallet file')
-    .option('-h, --host <host>', 'Bitcore Wallet Service URL (eg: http://localhost:3001/copay/api')
+    .option('-h, --host <host>', 'Bitcore Wallet Service URL (eg: http://localhost:3232/bws/api')
     .option('-v, --verbose', 'be verbose')
 
   return program;
 };
 
 Utils.COIN = {
-  bch: {
-    name: 'bch',
-    toSatoshis: 100000000,
-    maxDecimals: 8,
-    minDecimals: 8,
-  },
-  btc: {
-    name: 'btc',
+  HUSH: {
+    name: 'HUSH',
     toSatoshis: 100000000,
     maxDecimals: 8,
     minDecimals: 8,
@@ -302,8 +296,8 @@ Utils.renderAmount = function(satoshis, coin, opts) {
 
   opts = opts || {};
 
-  var coin = coin || 'btc';
-  var u = Utils.COIN[coin] || Utils.COIN.btc;
+  var coin = coin || 'HUSH';
+  var u = Utils.COIN[coin] || Utils.COIN.HUSH;
   var amount = clipDecimals((satoshis / u.toSatoshis), u.maxDecimals).toFixed(u.maxDecimals);
   return addSeparators(amount, opts.thousandsSeparator || ',', opts.decimalSeparator || '.', u.minDecimals) + ' ' + u.name;
 };
