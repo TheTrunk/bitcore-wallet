@@ -9,7 +9,7 @@ This can be used to operate Hush wallets.
 # Quick Guide
 
 ``` shell
-# Use -h or BWS_HOST to setup the BWS URL (defaults to localhost:3001)
+# Use -h or BWS_HOST to setup the BWS URL (defaults to localhost:3232)
 # 
 # Start a local BWS instance be doing:
 # git clone https://github.com/TheTrunk/bitcore-wallet-service-hush.git bws
@@ -45,7 +45,7 @@ wallet address
 # Check your balance
 wallet balance
    
-# Spend coins. Amount can be specified in btc, bit or sat (default)
+# Spend coins. Amount can be specified in HUSH, bit or sat (default)
 wallet send 1xxxxx 1000bit "1000 bits to mother"
   * Tx created: ID 01425517364314b9ac6017-e97d-46d5-a12a-9d4e5550abef [pending]
     RequiredSignatures: 2
