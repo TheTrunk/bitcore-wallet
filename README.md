@@ -1,7 +1,7 @@
 # bitcore-wallet-hush
 
-Hush port from bitcoin's [bitcore-wallet] (https://github.com/bitpay/bitcore-wallet).
-A simple Command Line Interface Wallet using [Bitcore Wallet Service Hush] (https://github.com/TheTrunk/bitcore-wallet-service-hush) and its *official* client lib, bitcore-wallet-client-hush] (https://github.com/TheTrunk/bitcore-wallet-client-hush)
+Hush port from bitcoin's ([bitcore-wallet](https://github.com/bitpay/bitcore-wallet)).
+A simple Command Line Interface Wallet using ([Bitcore Wallet Service Hush] (https://github.com/TheTrunk/bitcore-wallet-service-hush)) nd its *official* client lib, ([bitcore-wallet-client-hush] (https://github.com/TheTrunk/bitcore-wallet-client-hush))
 
 This can be used to operate Hush wallets.
 
